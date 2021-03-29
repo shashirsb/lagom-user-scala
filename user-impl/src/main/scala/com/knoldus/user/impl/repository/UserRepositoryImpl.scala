@@ -11,12 +11,12 @@ class UserRepositoryImpl(session: JdbcSession)(implicit ec: ExecutionContext) ex
 
   override def createTable: Future[Done] = {
     val query =
-      """
-        |CREATE TABLE IF NOT EXISTS user (
-        |orgId INT NOT NULL,
-        |email VARCHAR(64) NOT NULL,
-        |name VARCHAR(64) NOT NULL,
-        |PRIMARY KEY (orgId))
+      """      
+        |CREATE TABLE "ADMIN"."user" 
+        |(	"orgId" VARCHAR2(254 BYTE) NOT NULL ENABLE, 
+        |"email" VARCHAR2(254 BYTE) NOT NULL ENABLE, 
+        |"name" VARCHAR2(254 BYTE) NOT NULL ENABLE, 
+        |PRIMARY KEY ("orgId"))
       """.stripMargin
     session.withConnection(_.prepareStatement(query).execute()).map(_ => Done)
   }
