@@ -17,8 +17,8 @@ lazy val `user-api` = (project in file("user-api"))
 
 lazy val `user-impl` = (project in file("user-impl"))
   .enablePlugins(LagomScala)
-  .settings(resolvers += "sss" at "https://maven.oracle.com",
-    credentials += Credentials("sss", "login.oracle.com", "shashi.rsb@hotmail.com", "Hitmewell123"),
+  .settings(resolvers += "OAM 11g" at "https://maven.oracle.com",
+    credentials += Credentials("OAM 11g", "login.oracle.com", "shashi.rsb@hotmail.com", "Hitmewell123"),
     libraryDependencies += "com.oracle.ojdbc" % "ojdbc8" % "19.3.0.0"
     )
   .settings(    
