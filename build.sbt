@@ -26,6 +26,7 @@ lazy val `user-impl` = (project in file("user-impl"))
       lagomScaladslPersistenceJdbc,
       javaJdbc
     )
+  )
   .settings(
     libraryDependencies ++= Seq(lagomScaladslTestKit, MacWire, FilterHelper, ScalaTest,
       lagomScaladslPersistenceJdbc, lagomScaladslApi, Mockito, MySqlConnector, TypeSafeConf))
